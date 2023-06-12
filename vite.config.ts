@@ -1,4 +1,4 @@
-import { defineConfig } from "vite";
+import { defineConfig, splitVendorChunkPlugin } from "vite";
 import { svelte } from "@sveltejs/vite-plugin-svelte";
 import { resolve } from "path";
 
@@ -11,6 +11,6 @@ export default defineConfig(() => {
 				"@ui": resolve(__dirname, "src/ui"),
 			},
 		},
-		plugins: [svelte()],
+		plugins: [svelte(), splitVendorChunkPlugin()],
 	};
 });
